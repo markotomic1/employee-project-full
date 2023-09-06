@@ -1,0 +1,32 @@
+@import "../../constant.scss";
+.table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-top: 50px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+}
+th {
+  background-color: $th-back-color;
+  color: $th-color;
+}
+
+td,
+th {
+  padding: 10px 15px;
+  text-align: center;
+}
+
+tr:nth-child(2n) {
+  background-color: $tr-even-back-color;
+}
+tr:nth-child(2n + 1) {
+  background-color: $tr-odd-back-color;
+}
+.table--buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}

@@ -1,0 +1,84 @@
+@import "../../constant.scss";
+
+.navigation {
+  height: 60px;
+  background-color: $navigation-back-color;
+  color: $navigation-text-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+.navigation--menu-icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    background-color: $navigation-back-color;
+    padding: 20px;
+    border-radius: 0px 0px 10px 0px;
+  }
+}
+.show {
+  display: block;
+}
+.nav-list--item {
+  @media screen and (max-width: 768px) {
+    margin-bottom: 15px;
+  }
+}
+
+.profile-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  right: 10px;
+  top: calc(30px - 1em / 4);
+  padding: 0px 5px;
+}
+.nav--group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile--menu {
+  display: flex;
+  flex-direction: column;
+  background-color: $navigation-back-color;
+  gap: 10px;
+  border-radius: 0px 0px 10px 10px;
+  padding: 15px;
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+}
+.icon-container__hover:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}

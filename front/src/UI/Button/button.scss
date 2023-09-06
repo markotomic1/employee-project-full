@@ -1,0 +1,110 @@
+@import "../../constant.scss";
+
+.button {
+  border-color: $button-border-color;
+  background-color: $button-background;
+  color: $button-color;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.button:hover {
+  opacity: 0.7;
+}
+.log-reg-button {
+  width: 25%;
+  border: none;
+  outline: none;
+  background-color: $log-button-back;
+  border-radius: 2px;
+  padding: 7px 10px;
+  @media only screen and (max-width: 768px) {
+    padding: 5px;
+    font-size: 12px;
+  }
+}
+.button:disabled {
+  cursor: not-allowed;
+}
+.menu--button {
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edit {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  background-color: $edit-button-background;
+  color: $edit-button-color;
+  border: 1px solid $edit-button-border-color;
+}
+.update {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+  background-color: $delete-button-background;
+  color: $delete-button-color;
+  border: 1px solid $delete-button-border-color;
+}
+.modal--close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  outline: none;
+  border: none;
+  border-radius: 0 10px 0 10px;
+  background-color: $edit-button-background;
+  color: $edit-button-color;
+  border: $edit-button-border-color;
+}
+.form--button {
+  background-color: $edit-button-background;
+  color: $edit-button-color;
+  border: $edit-button-border-color;
+  border-radius: 5px;
+}
+.button__edit {
+  border: none;
+  background-color: $edit-button-background;
+  color: $edit-button-color;
+  border-bottom: 1px solid $edit-button-border-color;
+  font-size: 12px;
+}
+.button__delete {
+  border: none;
+  background-color: $delete-button-background;
+  color: $delete-button-color;
+  border-bottom: 1px solid $delete-button-border-color;
+  font-size: 12px;
+}
+.button__change-state {
+  border: none;
+  background-color: $change-state-button-background;
+  color: $change-state-button-color;
+  border-bottom: 1px solid $change-state-button-border-color;
+  font-size: 12px;
+}
+.change-button__green {
+  border: none;
+  background-color: $change-state-green-button-background;
+  color: $change-state-green-button-color;
+  font-size: 12px;
+}
+.change-button__red {
+  border: none;
+  background-color: $change-state-red-button-background;
+  color: $change-state-red-button-color;
+  font-size: 12px;
+}
+.change-button__yellow {
+  border: none;
+  background-color: $change-state-yellow-button-background;
+  color: $change-state-yellow-button-color;
+  font-size: 12px;
+}

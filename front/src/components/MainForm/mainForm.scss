@@ -1,0 +1,44 @@
+@import "../../constant.scss";
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $back-linear;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 80%;
+}
+.form--heading {
+  color: $log-reg-form-color;
+  font-size: 34px;
+}
+.form--label {
+  color: $log-reg-form-color;
+}
+.form--group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form--input {
+  border: none;
+  border-bottom: 1px solid $input-border;
+  outline: none;
+  padding: 3px 5px;
+}
+
+.button-group {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.button-group--text {
+  color: $small-color;
+}

@@ -1,0 +1,448 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "walter-backend",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/app"
+    }
+  ],
+  "tags": [
+    {
+      "name": "user",
+      "description": "Everything about users"
+    },
+    {
+      "name": "leaveForm",
+      "description": "Everything about leave forms"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/users/register": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "register user",
+        "description": "register user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "marko3@waltercode.com",
+                  "password": "sifra1234"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/users/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "summary": "login user",
+        "description": "login user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "marko3@waltercode.com",
+                  "password": "sifra1234"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        }
+      }
+    },
+    "/users/changePassword": {
+      "patch": {
+        "tags": [
+          "user"
+        ],
+        "summary": "change password",
+        "description": "change password",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "password": "sifra1234"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Authentication error"
+          }
+        }
+      }
+    },
+    "/apply": {
+      "post": {
+        "tags": [
+          "leaveForm"
+        ],
+        "summary": "apply for leave",
+        "description": "apply for leave",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "Reason for leave": "test2",
+                  "Date of creation": "4/22/2023",
+                  "Leave type": "vacation",
+                  "Start date of leave": "4/22/2023",
+                  "End date of leave": "4/30/2023"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Authentication error"
+          }
+        }
+      }
+    },
+    "/apply/{id}": {
+      "delete": {
+        "tags": [
+          "leaveForm"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "String representation of leave form id"
+          }
+        ],
+        "summary": "delete apply form",
+        "description": "delete apply form",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "State can only be pending"
+          },
+          "404": {
+            "description": "Form not found"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "leaveForm"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "String representation of leave form id"
+          }
+        ],
+        "summary": "update leave form",
+        "description": "update leave form",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "Reason for leave": "odmor",
+                  "User identifier": "milan",
+                  "Date of creation": "4/22/2023",
+                  "Leave type": "vacation",
+                  "Start date of leave": "10/11/2023",
+                  "End date of leave": "12/11/2022",
+                  "Count of working days between set dates": 4,
+                  "state": "Cancelled"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "403": {
+            "description": "State can only be pending"
+          },
+          "404": {
+            "description": "Form not found"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "leaveForm"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "String representation of leave form id"
+          }
+        ],
+        "summary": "get specific apply for leave",
+        "description": "get specific leave form",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "404": {
+            "description": "Form not found"
+          }
+        }
+      }
+    },
+    "/apply/": {
+      "get": {
+        "tags": [
+          "leaveForm"
+        ],
+        "summary": "get all leave forms for logged in user",
+        "description": "get all leave forms for logged in user",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/apply/listAll": {
+      "get": {
+        "tags": [
+          "leaveForm"
+        ],
+        "summary": "find all forms, only for admin",
+        "description": "find all forms and sort, filter, only for admin",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Authentication error"
+          },
+          "403": {
+            "description": "only admin can access"
+          }
+        }
+      }
+    },
+    "/apply/changeState/{id}": {
+      "patch": {
+        "tags": [
+          "leaveForm"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "String representation of leave form id"
+          }
+        ],
+        "summary": "change State",
+        "description": "change state, on;y admin can do",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "state": "Approved"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "401": {
+            "description": "Authentication error"
+          },
+          "403": {
+            "description": "only admin can access"
+          }
+        }
+      }
+    },
+    "/apply/report": {
+      "post": {
+        "tags": [
+          "leaveForm"
+        ],
+        "summary": "report",
+        "description": "report for specific date interval,only admin can do",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "startDate": "3/1/2023",
+                  "endDate": "5/1/2023"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {}
+            }
+          },
+          "400": {
+            "description": "Provide correct time interval"
+          },
+          "500": {
+            "description": "Server error"
+          }
+        }
+      }
+    }
+  }
+}

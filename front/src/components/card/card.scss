@@ -1,0 +1,29 @@
+@import "../../constant.scss";
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: $box-shadow;
+  background-color: $card-back-color;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: $card__box-shadow;
+}
+.card--button-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.card--item {
+  display: grid;
+  grid-auto-flow: column;
+  // grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+.card--item--text {
+  text-decoration: underline;
+}
+.card--item--status {
+  text-decoration: none;
+  padding: 5px;
+}

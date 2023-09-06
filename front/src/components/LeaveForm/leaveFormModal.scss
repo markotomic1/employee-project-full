@@ -1,0 +1,23 @@
+.leave-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 25vw;
+  padding: 10px;
+
+  @media screen and (max-width: 600px) {
+    width: 70vw;
+  }
+  @media screen and (min-width: 600px) {
+    width: 40vw;
+  }
+  @media screen and (min-width: 768px) {
+    width: 25vw;
+  }
+}
+.input--leave {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid gray;
+  font-size: 1.1rem;
+}

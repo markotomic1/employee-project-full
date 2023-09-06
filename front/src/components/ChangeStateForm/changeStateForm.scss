@@ -1,0 +1,29 @@
+.change-state-form {
+  display: grid;
+  text-align: center;
+  gap: 50px;
+
+  @media screen and (max-width: 600px) {
+    width: 70vw;
+  }
+  @media screen and (min-width: 600px) {
+    width: 40vw;
+  }
+  @media screen and (min-width: 992px) {
+    width: 30vw;
+  }
+}
+.change-state-form--item {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+}
+
+.change-state--text {
+  font-size: 22px;
+}
