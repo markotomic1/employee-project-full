@@ -27,6 +27,7 @@ const ReportForm = (props: {
         await dispatch(generateReportAction({ startDate, endDate }));
         props.setShowModal("closed");
       } catch (error: any) {
+        console.error(error);
         dispatch(
           uiActions.showError({
             message: error.message,
