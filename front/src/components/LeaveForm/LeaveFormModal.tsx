@@ -76,6 +76,7 @@ const LeaveFormModal = (props: {
         revalidator.revalidate();
         props.setShowModal("closed");
       } catch (error: any) {
+        console.error(error);
         dispatch(
           uiActions.showError({
             message: error.message,

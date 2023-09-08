@@ -39,9 +39,7 @@
   "paths": {
     "/users/register": {
       "post": {
-        "tags": [
-          "user"
-        ],
+        "tags": ["user"],
         "summary": "register user",
         "description": "register user",
         "requestBody": {
@@ -78,9 +76,7 @@
     },
     "/users/login": {
       "post": {
-        "tags": [
-          "user"
-        ],
+        "tags": ["user"],
         "summary": "login user",
         "description": "login user",
         "requestBody": {
@@ -117,9 +113,7 @@
     },
     "/users/changePassword": {
       "patch": {
-        "tags": [
-          "user"
-        ],
+        "tags": ["user"],
         "summary": "change password",
         "description": "change password",
         "requestBody": {
@@ -153,9 +147,7 @@
     },
     "/apply": {
       "post": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "summary": "apply for leave",
         "description": "apply for leave",
         "requestBody": {
@@ -192,9 +184,7 @@
     },
     "/apply/{id}": {
       "delete": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "parameters": [
           {
             "in": "path",
@@ -227,9 +217,7 @@
         }
       },
       "patch": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "parameters": [
           {
             "in": "path",
@@ -281,9 +269,7 @@
         }
       },
       "get": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "parameters": [
           {
             "in": "path",
@@ -315,9 +301,7 @@
     },
     "/apply/": {
       "get": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "summary": "get all leave forms for logged in user",
         "description": "get all leave forms for logged in user",
         "responses": {
@@ -335,9 +319,7 @@
     },
     "/apply/listAll": {
       "get": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "summary": "find all forms, only for admin",
         "description": "find all forms and sort, filter, only for admin",
         "responses": {
@@ -361,9 +343,7 @@
     },
     "/apply/changeState/{id}": {
       "patch": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "parameters": [
           {
             "in": "path",
@@ -410,9 +390,7 @@
     },
     "/apply/report": {
       "post": {
-        "tags": [
-          "leaveForm"
-        ],
+        "tags": ["leaveForm"],
         "summary": "report",
         "description": "report for specific date interval,only admin can do",
         "requestBody": {
